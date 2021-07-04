@@ -18,6 +18,8 @@ module.exports = function (app) {
       const result = translator.translate(text);
       res.json({ text, translation: result });
     } else if (locale === "british-to-american") {
+      const result = translator.translateBritish(text);
+      res.json({ text, translation: result });
     } else {
       res.json({ error: "Invalid value for locale field" });
     }
